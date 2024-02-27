@@ -399,33 +399,27 @@ button:focus {
                     onclick="closeInfoDiv('infoDiv3')">Cerrar</a>
             </div>
             <a href="#" class="ui-btn ui-btn-b ui-corner-all" onclick="openInfoDiv('infoDiv3')">Ordena Aqui</a>
-            <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true"
-                id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
-                <% tacos.forEach((taco)=> { %>
+            <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+                <% tacos.forEach((taco) => { %>
                     <div data-role="collapsible" data-filtertext="<%= taco.descripcion %>">
-                        <h3>
-                            <%= taco.descripcion %>
-                        </h3>
-                        <ul data-role="listview" data-inset="false">
-                            <li data-filtertext="Cine Movies">Numero de Orden: <%= taco.no_orden %>
-                            </li>
-                            <li data-filtertext="Cine Movies">Cantidad: <%= taco.cantidad %>
-                            </li>
-                            <li data-filtertext="Cine Movies">Descripcion: <%= taco.descripcion%>
-                            </li>
-                            <li>Cilantro: <%= taco.cilantro %>
-                            </li>
-                            <li>Cebolla: <%= taco.cebolla %>
-                            </li>
-                            <li>Salsa: <%= taco.salsa %>
-                            </li>
-                            <li>Total: <%= taco.total %>
-                            </li>
-                            <li><a href="/<%= taco.no_orden %>" class="ui-btn">Editar</a></li>
-                            <li><a href="/delete/<%= taco.no_orden %>" class="ui-btn">Eliminar</a></li>
-                        </ul>
+                        <h3><%= taco.descripcion %></h3>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <p>Numero de Orden: <%= taco.no_orden %></p>
+                                <p>Cantidad: <%= taco.cantidad %></p>
+                                <p>Descripcion: <%= taco.descripcion %></p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p>Cilantro: <%= taco.cilantro %></p>
+                                <p>Cebolla: <%= taco.cebolla %></p>
+                                <p>Salsa: <%= taco.salsa %></p>
+                            </div>
+                        </div>
+                        <p>Total: <%= taco.total %></p>
+                        <a href="/<%= taco.no_orden %>" class="ui-btn">Editar</a>
+                        <a href="/delete/<%= taco.no_orden %>" class="ui-btn">Eliminar</a>
                     </div>
-                    <% }) %>
+                <% }) %>
             </div>
                     
 
